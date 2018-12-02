@@ -7,6 +7,16 @@ import os
 from arcpy import env
 env.workspace =
 
+def year_select(): #Ask user to pick an election year - 2012 or 2016
+    print 'Which election year would you like to use?: 2012 or 2016'
+    x = raw_input('Provide Selection: ')
+    if x == '2012':
+        return x
+    elif x == '2016':
+        return x
+    else:
+        print 'Invalid Input'
+
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "counties_dissolved.shp", countyID, 
 def join
