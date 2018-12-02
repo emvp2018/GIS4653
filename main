@@ -2,4 +2,8 @@
 #Authors: Emily Wong, Jeff Clinard, Colton Snelling
 #Description: This is the main python code body for the project. 
 
-import module
+import module, arcpy
+from arcpy import env
+
+env.workspace = 
+env.overwriteOutput = True
