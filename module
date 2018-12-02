@@ -18,7 +18,9 @@ def year_select(): #Ask user to pick an election year - 2012 or 2016
         print 'Invalid Input'
 
 def dissolve_tracts():
-  arcpy.Dissolve_management("tracts.shp", "counties_dissolved.shp", countyID, 
+  arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
+  [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEAN]])
+  
 def join
 census_join = AddJoin_management (california_census_tracts, in_field, join_table, join_field, {join_type})
 
