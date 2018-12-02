@@ -10,5 +10,6 @@ env.workspace =
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "counties_dissolved.shp", countyID, 
 def join
+census_join = AddJoin_management (california_census_tracts, in_field, join_table, join_field, {join_type})
 
 defcounty join
