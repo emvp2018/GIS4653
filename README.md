@@ -2,6 +2,7 @@
 California County Demographics Data
 
 Title: Counties In California That Voted Republican
+
 Abstract: California is the state everyone knows as “the blue state”.  For years, California has been leading the way for more progressive views across the nation.  It would be both naive and insensible to assume that everyone in California is a democrat, however.  This project’s goal is fivefold.  Our first, and most simple, goal is to figure out is which counties voted Republican in the presidential elections of 2008, 2012, or 2016.  The second goal, is to figure out what the split between genders was when it comes to voting Republican - did more males than females vote for Republic asans? Or vice versa?  To add to this, our third goal deals with socioeconomic classes - did wealthier populations tend to vote Republican more often than less wealthy populations?  Our fourth goal is to figure out which ethnicities voted Republican the most often. Finally, our fifth goal is to figure out voter turnout in each election, comparing voter registration versus how many actually voted.
 
 
