@@ -5,5 +5,4 @@
 import arcpy
 import os
 from arcpy import env
-env.workspace = 
-
+env.workspace =
