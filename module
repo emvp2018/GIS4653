@@ -29,4 +29,5 @@ def join
 census_join = AddJoin_management (tl_2010_06_tract10, GEOID, DEC_10_DP_DPDP1_with_ann, ID2,)
 
 defcounty join
-county
+county_join = AddJoin_management (tl_2010_06_tracct10, NAME10, Export_Output_2, F2,) 
+
