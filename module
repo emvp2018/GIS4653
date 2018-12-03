@@ -22,6 +22,7 @@ def dissolve_tracts():
   [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEAN]])
   
 def join
-census_join = AddJoin_management (california_census_tracts, in_field, join_table, join_field, {join_type})
+census_join = AddJoin_management (tl_2010_06_tract10, GEOID, DEC_10_DP_DPDP1_with_ann, ID2,)
 
 defcounty join
+county
