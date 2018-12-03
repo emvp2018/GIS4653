@@ -1,6 +1,10 @@
 #Title: module
 #Authors: Emily Wong, Jeff Clinard, Colton Snelling
 #Description: This contains the functions to be called by the main module.
+#POP = population - sum of total population in each county
+#AGE - average age for each population per county
+#SEX -
+#MEDIAN_INCOME - median income for each population within each county
 
 import arcpy
 import os
@@ -19,7 +23,7 @@ def year_select(): #Ask user to pick an election year - 2012 or 2016
 
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
-  [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEAN]])
+  [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEDIAN]])
   
 def join
 census_join = AddJoin_management (tl_2010_06_tract10, GEOID, DEC_10_DP_DPDP1_with_ann, ID2,)
