@@ -1,6 +1,7 @@
 #Title: module
 #Authors: Emily Wong, Jeff Clinard, Colton Snelling
 #Description: This contains the functions to be called by the main module.
+
 #POP = population - sum of total population in each county
 #AGE - average age for each population per county
 #SEX - total population per sex per county
