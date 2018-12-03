@@ -3,7 +3,7 @@
 #Description: This contains the functions to be called by the main module.
 #POP = population - sum of total population in each county
 #AGE - average age for each population per county
-#SEX -
+#SEX - total population per sex per county
 #MEDIAN_INCOME - median income for each population within each county
 
 import arcpy
