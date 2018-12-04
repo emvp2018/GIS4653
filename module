@@ -7,10 +7,12 @@
 #SEX - total population per sex per county
 #MEDIAN_INCOME - median income for each population within each county
 
-import arcpy
-import os
+import arcpy, os
 from arcpy import env
+
 env.workspace =
+env.overwriteOutput = True
+
 
 def year_select(): #Ask user to pick an election year - 2012 or 2016
     print 'Which election year would you like to use?: 2012 or 2016'
