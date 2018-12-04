@@ -14,12 +14,12 @@ env.workspace =
 env.overwriteOutput = True
 
 
-def year_select(): #Ask user to pick an election year - 2012 or 2016
-    print 'Which election year would you like to use?: 2012 or 2016'
+def year_select(): #Ask user to pick an election year - 2008 or 2012
+    print 'Which election year would you like to use?: 2008 or 2012'
     x = raw_input('Provide Selection: ')
-    if x == '2012':
+    if x == '2008':
         return x
-    elif x == '2016':
+    elif x == '2012':
         return x
     else:
         print 'Invalid Input'
