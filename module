@@ -29,7 +29,7 @@ def dissolve_tracts():
   [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEDIAN]])
   
 def join
-census_join = AddJoin_management (tl_2010_06_tract10, GEOID, DEC_10_DP_DPDP1_with_ann, ID2,)
+census_join = AddJoin_management (tl_2010_06_tract10, GEOID, 2010_census_data, ID2,)
 
 defcounty join
 county_join = AddJoin_management (tl_2010_06_tracct10, NAME10, Export_Output_2, F2,) 
