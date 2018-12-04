@@ -6,6 +6,9 @@
 #AGE - average age for each population per county
 #SEX - total population per sex per county
 #MEDIAN_INCOME - median income for each population within each county
+#Demographics to explore
+# Total Pop, Total Pop 18+, (Total Male Pop, Median Male Age, Total Male Pop 18+)-All for women too,
+# Total Race, Total White, Black, American Indian, Asian, Pacific, Other, Total Two Races
 
 import arcpy, os
 from arcpy import env
