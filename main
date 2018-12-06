@@ -17,8 +17,5 @@ if year_select == '2008': #User specified election year 2008
 elif year_select == '2012': #User specified election year 2012
     print snel6424_module.()
 
-elif year_select == '2016': #User specified election year 2016
-    print snel6424_module.()
-
 else:
     print 'Invalid Input'
