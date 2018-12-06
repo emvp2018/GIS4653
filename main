@@ -16,13 +16,6 @@ module.join()
 
 module.county_join()
 
-year_select = snel6424_module.year_select() #Ask user for election year
 
-if year_select == '2008': #User specified election year 2008
-    print snel6424_module.()
-
-elif year_select == '2012': #User specified election year 2012
-    print snel6424_module.()
-
-else:
-    print 'Invalid Input'
+#User input: Election year
+year_select = module.year_select() #Ask user for election year
