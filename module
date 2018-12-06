@@ -37,6 +37,8 @@ def dissolve_tracts():
   ["HD01_S089", SUM], ["HD02_S089", MEAN], ["HD01_S094", SUM], ["HD02_S094", MEAN], ["HD01_S095", SUM], ["HD02_S095", MEAN], 
   ["HD01_S114", SUM], ["HD02_S114", MEAN]])
   
+  #DO NOT DELETE THE HEADINGS OR THIS IS ALL FOR NAUGHT.
+  
 def join()
 census_join = AddJoin_management (tl_2010_06_tract10, GEOID, 2010_census_data, ID2,)
 
