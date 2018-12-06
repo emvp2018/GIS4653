@@ -8,6 +8,13 @@ from arcpy import env
 env.workspace = 
 env.overwriteOutput = True
 
+#Process the data
+
+module.dissolve_tracts()
+
+module.join()
+
+module.county_join()
 
 year_select = snel6424_module.year_select() #Ask user for election year
 
