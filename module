@@ -7,7 +7,8 @@
 #SEX - total population per sex per county
 #MEDIAN_INCOME - median income for each population within each county
 #Demographics to explore
-# Total Pop, Total Pop 18+, (Total Male Pop, Median Male Age, Total Male Pop 18+)-All for women too,
+# Total Pop (HD01_S001), Total Pop 18+ (HD01_S022), (Total Male Pop (HD01_S026), Median Male Age (HD01_S045), 
+#Total Male Pop 18+ (HD01_S047))-All for women too (HD01_S051, HD01_S070, HD01_S072)
 # Total Race, Total White, Black, American Indian, Asian, Pacific, Other, Total Two Races
 
 import arcpy, os
@@ -29,7 +30,8 @@ def year_select(): #Ask user to pick an election year - 2008 or 2012
 
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
-  [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEDIAN]])
+  [["HD01_S001", SUM], ["HD01_S020", MEDIAN], ["HD01_S022", SUM], ["HD01_S026", SUM], 
+  ["HD01_S045", MEDIAN], ["HD01_S047", SUM], ["HD01_S051", SUM], ["HD01_S070", MEDIAN],["HD01_S072", SUM],])
   
 def join()
 census_join = AddJoin_management (tl_2010_06_tract10, GEOID, 2010_census_data, ID2,)
