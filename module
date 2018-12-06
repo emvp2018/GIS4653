@@ -18,7 +18,7 @@ env.workspace =
 env.overwriteOutput = True
 
 
-def year_select(): #Ask user to pick an election year - 2008 or 2012
+def year_select():  # Ask user to pick an election year - 2008 or 2012
     print 'Which election year would you like to use?: 2008 or 2012'
     x = raw_input('Provide Selection: ')
     if x == '2008':
@@ -26,7 +26,53 @@ def year_select(): #Ask user to pick an election year - 2008 or 2012
     elif x == '2012':
         return x
     else:
-        print 'Invalid Input'
+        print
+        'Invalid Input'
+
+def year_2008(): #User selects year 2008
+
+    attribute_list = []
+
+    print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+    x = raw_input('Provide Selection: ')
+
+    if x == 'Sex':
+        print 'Would you like counties where majority is Male or majority is Female?: '
+        x = raw_input('Provide Selection: ')
+        if x== 'Male':
+            arcpy.SelectLayerByAttribute_management('HD02_S04', 'Selection Type', 'Where')
+
+            for attribute in attribute_list:
+                input_attribute = raw_input('Please provide attribute you would like to use: ')
+                selection_type = raw_input('Would you like to add another selection? Yes or No: '):
+                    if selection_type == Yes
+                where_clause = raw_input(': ')
+                arcpy.Clip_analysis(input_attribute, selection_type, where_clause)
+
+        add_more = raw_input('Do you want to choose another attribute as well? Yes or No: '
+        while add_more == 'Yes': #Allows the user to add more than one attribute
+            year_2008 = raw_input('Please choose which other attribute you would like to use: ')
+            attribute_list.append(year_2008)
+            add_more = raw_input('Do you want to choose another attribute as well? Yes or No: ')
+
+            for attributes in attribute_list:
+
+
+
+def year_2012(): #User selects year 2012
+
+    attribute_list = []
+
+    print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+    x = raw_input('Provide Selection: ')
+    add_more = raw_input('Do you want to choose another attribute as well? Yes or No: '
+
+    while add_more == 'Yes':  # Allows the user to add more than one attribute
+        year_2008 = raw_input('Please choose which other attribute you would like to use: ')
+        attribute_list.append(year_2008)
+        add_more = raw_input('Do you want to choose another attribute as well? Yes or No: ')
+
+        for attributes in attribute_list:
 
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
