@@ -31,9 +31,9 @@ def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
   [["POP", SUM], ["AGE", MEAN"], ["SEX", SUM], ["MEDIAN_INCOME", MEDIAN]])
   
-def join
+def join()
 census_join = AddJoin_management (tl_2010_06_tract10, GEOID, 2010_census_data, ID2,)
 
-defcounty join
+defcounty join()
 county_join = AddJoin_management (tl_2010_06_tracct10, NAME10, Export_Output_2, F2,) 
 
