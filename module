@@ -34,76 +34,69 @@ def year_2008(): #User selects year 2008
     print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
     x = raw_input('Provide Selection: ')
     
-    print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
-    x = raw_input('Provide Selection: ')
-
-    if x == 'Sex':
+       if x == 'Sex':
         print 'Would you like to find counties with majority male or majority female? :'
         sex = raw_input('Male or Female: ')
         if sex == 'Male':
-            in_layer_or_view = 'HD02_S026' #Percent Male
+            in_layer_or_view = 'HD02_S026' #Total Percent Male
         elif sex == 'Female':
-            in_layer_or_view = 'HD02_S051' #Percent Female
+            in_layer_or_view = 'HD02_S051' #Total Percent Female
+        else:
+            print('INVALID INPUT')
+
     elif x == 'Median Age':
         in_layer_or_view = 'HD01_S020' #Total Median Age
+
     elif x == 'Ethnicity':
-        print 'What ethnicity would you like to use?: White, African American, American Indian, Asian, Other'
-        ethnicity = raw_input('White, African American, American Indian, Asian, Other')
+        print 'What ethnicity would you like to use?: White, African American, American Indian, Asian, Hawaiian, Other'
+        ethnicity = raw_input('Please Choose: White, African American, American Indian, Asian, Hawaiian, Other')
+
         if ethnicity == 'White'
-            in_layer_or_view = ''
+            print 'Okay, counties with majority white population'
+            in_layer_or_view = 'HD02_S078' #Percent White Population
+
         if ethnicity == 'African American'
-            in_layer_or_view = ''
+            print 'Okay, counties with majority African American population'
+            in_layer_or_view = 'HD02_S079' #Percent African American Population
+
         if ethnicity == 'American Indian'
-            in_layer_or_view = ''
+            print 'Okay, counties with majority American Indian population'
+            in_layer_or_view = 'HD02_S080' #Percent American Indian Population
+
         if ethnicity == 'Asian'
-            in_layer_or_view = 'Other'
+            print 'Okay, counties with majority Asian population'
+            in_layer_or_view = 'HD02_S081' #Percent Asian Population
+
+        if ethnicity == 'Hawaiian'
+            print 'Okay, counties with majority Hawaiian population'
+            in_layer_or_view = 'HD02_S089'  # Percent Hawaiian Population
+
+        if ethnicity == 'Other'
+            print 'Okay, counties with majority \'other\' population'
+            in_layer_or_view = 'HD02_S094' #Percent 'Other' Population
+
+        else:
+            print('INVALID INPUT')
+
 
     elif x == 'Political Affiliation':
-        in_layer_or_view =
+        print ' What political affiliation would you like to select?: Republican or Democrat'
+        politic_aff = raw_input('Republican or Democrat: ')
+        if politic_aff == 'Republican'
+        in_layer_or_view = '' #Percent Population is Republican
+        elif politic_aff == 'Democrat'
+        in_layer_or_view = '' #Percent Population is Democrat
+        else:
+            print('INVALID INPUT')
+
     elif x == 'Voter Turnout':
-        in_layer_or_view =
+        in_layer_or_view = '' #Total Amount of Voters
+
     elif x == 'Total Population':
-        in_layer_or_view =
+        in_layer_or_view = 'HD01_S001' #Total Population Over 18
+
     else:
         print('INVALID INPUT')
-
-#    if x == 'Sex':
-#        print 'Would you like counties where majority is Male or majority is Female?: '
-#        x = raw_input('Provide Selection: ')
-#        if x== 'Male':
-#            arcpy.SelectLayerByAttribute_management('HD02_S04', 'Selection Type', 'Where')
-#
-#            for attribute in attribute_list:
-#                input_attribute = raw_input('Please provide attribute you would like to use: ')
-#                selection_type = raw_input('Would you like to add another selection? Yes or No: '):
-#                    if selection_type == Yes
-#                where_clause = raw_input(': ')
-#                arcpy.Clip_analysis(input_attribute, selection_type, where_clause)
-#
-#        add_more = raw_input('Do you want to choose another attribute as well? Yes or No: '
-#        while add_more == 'Yes': #Allows the user to add more than one attribute
-#            year_2008 = raw_input('Please choose which other attribute you would like to use: ')
-#            attribute_list.append(year_2008)
-#            add_more = raw_input('Do you want to choose another attribute as well? Yes or No: ')
-#
-#            for attributes in attribute_list:
-#
-#
-#
-#def year_2012(): #User selects year 2012
-#
-#    attribute_list = []
-#
-#   print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
-#    x = raw_input('Provide Selection: ')
-#    add_more = raw_input('Do you want to choose another attribute as well? Yes or No: '
-#
-#    while add_more == 'Yes':  # Allows the user to add more than one attribute
-#        year_2008 = raw_input('Please choose which other attribute you would like to use: ')
-#        attribute_list.append(year_2008)
-#        add_more = raw_input('Do you want to choose another attribute as well? Yes or No: ')
-#
-#        for attributes in attribute_list:
 
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
