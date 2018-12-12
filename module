@@ -35,7 +35,7 @@ def year_2008(): #User selects year 2008
     x = raw_input('Provide Selection: ')
     
     if x == 'Sex':
-        print 'Would you like to find counties with majority male or majority female? :'
+        print 'Would you like to find counties with majority Male or majority Female? :'
         sex = raw_input('Male or Female: ')
         if sex == 'Male':
             in_layer_or_view = 'HD02_S026' #Total Percent Male
@@ -49,7 +49,7 @@ def year_2008(): #User selects year 2008
 
     elif x == 'Ethnicity':
         print 'What ethnicity would you like to use?: White, African American, American Indian, Asian, Hawaiian, Other'
-        ethnicity = raw_input('Please Choose: White, African American, American Indian, Asian, Hawaiian, Other')
+        ethnicity = raw_input('Provide Selection: ')
 
         if ethnicity == 'White'
             print 'Okay, counties with majority white population'
@@ -81,11 +81,14 @@ def year_2008(): #User selects year 2008
 
     elif x == 'Political Affiliation':
         print ' What political affiliation would you like to select?: Republican or Democrat'
-        politic_aff = raw_input('Republican or Democrat: ')
-        if politic_aff == 'Republican'
+        political_aff = raw_input('Provide Selection: ')
+        
+        if political_aff == 'Republican'
         in_layer_or_view = '' #Percent Population is Republican
-        elif politic_aff == 'Democrat'
+        
+        elif political_aff == 'Democrat'
         in_layer_or_view = '' #Percent Population is Democrat
+        
         else:
             print('INVALID INPUT')
 
@@ -97,7 +100,9 @@ def year_2008(): #User selects year 2008
 
     else:
         print('INVALID INPUT')
-
+        
+        
+        
 def dissolve_tracts():
   arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
   [["HD01_S001", SUM], ["HD01_S020", MEDIAN], ["HD01_S022", SUM], ["HD02_S022", MEAN], ["HD01_S026", SUM], ["HD02_S026", MEAN], 
