@@ -10,9 +10,11 @@ env.overwriteOutput = True
 
 #Process the data
 
+module.join()
+
+
 module.dissolve_tracts()
 
-module.join()
 
 module.county_join()
 
