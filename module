@@ -129,7 +129,9 @@ def year_2008(): #User selects year 2008
     else:
         print ('INVALID INPUT')
 
-def year_2012(): #User selects year 2008
+
+
+def year_2012(): #User selects year 2012
 
     print ('Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population')
     x = raw_input('Provide Selection: ')
