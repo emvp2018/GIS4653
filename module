@@ -14,7 +14,7 @@
 import arcpy, os
 from arcpy import env
 
-env.workspace =
+env.workspace = "C:/Users/Data/"
 env.overwriteOutput = True
 
 
@@ -135,9 +135,10 @@ def year_2008(): #User selects year 2008
 
         
         
-        
+
 def dissolve_tracts():
-  arcpy.Dissolve_management("tracts.shp", "C:/Data/counties_dissolved.shp", countyID, 
+  '''Dissolve census tracts into counties'''
+  arcpy.Dissolve_management("tl_2010_06_tract10.shp", "C:/Data/counties_dissolved.shp", countyID, 
   [["HD01_S001", SUM], ["HD01_S020", MEDIAN], ["HD01_S022", SUM], ["HD02_S022", MEAN], ["HD01_S026", SUM], ["HD02_S026", MEAN], 
   ["HD01_S045", MEDIAN], ["HD01_S047", SUM], ["HD02_S047", MEAN], ["HD01_S051", SUM], ["HD02_S051", MEAN], ["HD01_S070", MEDIAN], 
   ["HD01_S072", SUM], ["HD02_S072", MEAN], ["HD01_S071", SUM], ["HD02_S071", MEAN], ["HD01_S078", SUM], ["HD02_S078", MEAN], 
@@ -148,8 +149,10 @@ def dissolve_tracts():
   #DO NOT DELETE THE HEADINGS OR THIS IS ALL FOR NAUGHT.
   
 def join()
-census_join = AddJoin_management (tl_2010_06_tract10, GEOID, 2010_census_data, ID2,)
+'''joins tracts to census data'''
+census_join = arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID", "2010_census_data.csv", "ID2", KEEP_COMMON)
 
-defcounty join()
-county_join = AddJoin_management (tl_2010_06_tracct10, NAME10, Export_Output_2, F2,) 
+def county_join()
+'''joins tracts to counties'''
+county_join = arc.pyAddJoin_management ("tl_2010_06_tracct10.shp", "NAME10", "counties_dissolved.shp", "F2", KEEP_ALL) 
 
