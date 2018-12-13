@@ -19,3 +19,12 @@ module.county_join()
 
 #User input: Election year
 year_select = module.year_select() #Ask user for election year
+
+if year_select == '2008': #User specified election year 2008
+    print program_module.year_2008()
+
+elif year_select == '2012': #User specified election year 2012
+    print program_module.year_2012()
+
+else:
+    print 'Invalid Input'
