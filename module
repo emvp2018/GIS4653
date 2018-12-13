@@ -150,7 +150,7 @@ def dissolve_tracts():
   
 def join()
 '''joins tracts to census data'''
-census_join = arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID", "2010_census_data.csv", "ID2", KEEP_COMMON)
+census_join = arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID10", "2010_census_data.csv", "GEO.id2", KEEP_COMMON)
 
 def county_join()
 '''joins tracts to counties'''
