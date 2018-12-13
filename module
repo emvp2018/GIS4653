@@ -233,7 +233,7 @@ def year_2012(): #User selects year 2012
 
 
 
-def join()
+def join_tracts_census()
 '''joins tracts to census data'''
 arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID10", "2010_census_data.csv", "GEOID")           
 
