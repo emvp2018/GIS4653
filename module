@@ -33,8 +33,9 @@ def year_select():  # Ask user to pick an election year - 2008 or 2012
 
 def year_2008(): #User selects year 2008
 
-    print 'Which attributes would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+    print 'Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
     x = raw_input('Provide Selection: ')
+
 
 
     if x == 'Sex':
@@ -116,7 +117,20 @@ def year_2008(): #User selects year 2008
         print('INVALID INPUT')
 
 
-arcpy.SelectLayerByAttribute_management(attribute, 'SUBSET_SELECTION', )
+    output_feat = SelectLayerByAttribute_management(attribute, 'NEW_SELECTION')
+    print 'Would you like to choose another attribute to narrow your results?: Yes or No'
+    add_more = raw_input('Provide Selection: ')
+
+    if add_more == 'Yes':
+        while add_more == 'Yes':  # Allows the user to add more than one attribute
+            print 'Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+            loop_select = raw_input('Provide Selection: ')
+            arcpy.SelectLayerByAttribute_management(output_feat, "SUBSET_SELECTION", loop_select)
+            add_more = raw_input('Do you want to choose another file as well? Yes or No: ')
+    elif add_more == 'No':
+        print 'Okay. All done then!'
+    else:
+        print 'INVALID INPUT'
 
 
         
