@@ -19,7 +19,7 @@ env.overwriteOutput = True
 
 
 def year_select():  # Ask user to pick an election year - 2008 or 2012
-    print 'Which election year would you like to use?: 2008 or 2012'
+    print('Which election year would you like to use?: 2008 or 2012')
     x = raw_input('Provide Selection: ')
     if x == '2008':
         return x
@@ -28,18 +28,16 @@ def year_select():  # Ask user to pick an election year - 2008 or 2012
     else:
         print
         'Invalid Input'
-        
-        
 
 def year_2008(): #User selects year 2008
 
-    print 'Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+    print ('Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population')
     x = raw_input('Provide Selection: ')
 
 
 
     if x == 'Sex':
-        print 'Would you like to find counties with majority Male or majority Female? :'
+        print ('Would you like to find counties with majority Male or majority Female? :')
         sex = raw_input('Male or Female: ')
         if sex == 'Male':
             in_layer_or_view = 'HD02_S026' #Total Percent Male > Total Percent Female
@@ -54,36 +52,36 @@ def year_2008(): #User selects year 2008
         in_layer_or_view = 'HD01_S020' #Total Median Age
 
     elif x == 'Ethnicity':
-        print 'What ethnicity would you like to use?: White, African American, American Indian, Asian, Hawaiian, Other'
+        print ('What ethnicity would you like to use?: White, African American, American Indian, Asian, Hawaiian, Other')
         ethnicity = raw_input('Provide Selection: ')
 
         if ethnicity == 'White':
-            print 'Okay, counties with majority white population'
+            print ('Okay, counties with majority white population')
             in_layer_or_view = 'HD02_S078' #Percent White Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S078" > 50')
 
         if ethnicity == 'African American':
-            print 'Okay, counties with majority African American population'
+            print ('Okay, counties with majority African American population')
             in_layer_or_view = 'HD02_S079' #Percent African American Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S079" > 50')
 
         if ethnicity == 'American Indian':
-            print 'Okay, counties with majority American Indian population'
+            print ('Okay, counties with majority American Indian population')
             in_layer_or_view = 'HD02_S080' #Percent American Indian Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S080" > 50')
 
         if ethnicity == 'Asian':
-            print 'Okay, counties with majority Asian population'
+            print ('Okay, counties with majority Asian population')
             in_layer_or_view = 'HD02_S081' #Percent Asian Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S081" > 50')
 
         if ethnicity == 'Hawaiian':
-            print 'Okay, counties with majority Hawaiian population'
+            print ('Okay, counties with majority Hawaiian population')
             in_layer_or_view = 'HD02_S089'  # Percent Hawaiian Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S089" > 50')
 
         if ethnicity == 'Other':
-            print 'Okay, counties with majority \'other\' population'
+            print ('Okay, counties with majority \'other\' population')
             in_layer_or_view = 'HD02_S094' #Percent 'Other' Population > 50%
             attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S094" > 50')
 
@@ -92,20 +90,19 @@ def year_2008(): #User selects year 2008
 
 
     elif x == 'Political Affiliation':
-        print ' What political affiliation would you like to select?: Republican or Democrat'
+        print ('What political affiliation would you like to select?: Republican or Democrat')
         political_aff = raw_input('Provide Selection: ')
 
         if political_aff == 'Republican':
         in_layer_or_view = '' #Percent Population is Republican > Percent Population Democrat
         attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"" > 50)
 
-
         elif political_aff == 'Democrat':
         in_layer_or_view = '' #Percent Population is Democrat > Percent Population Republican
         attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"" > 50)
 
         else:
-            print('INVALID INPUT')
+            print ('INVALID INPUT')
 
     elif x == 'Voter Turnout':
         in_layer_or_view = '' #Total Amount of Voters per County
@@ -114,23 +111,124 @@ def year_2008(): #User selects year 2008
         in_layer_or_view = 'HD01_S001' #Total Population Over 18 per County
 
     else:
-        print('INVALID INPUT')
+        print ('INVALID INPUT')
 
 
     output_feat = SelectLayerByAttribute_management(attribute, 'NEW_SELECTION')
-    print 'Would you like to choose another attribute to narrow your results?: Yes or No'
+    print ('Would you like to choose another attribute to narrow your results?: Yes or No')
     add_more = raw_input('Provide Selection: ')
 
     if add_more == 'Yes':
         while add_more == 'Yes':  # Allows the user to add more than one attribute
-            print 'Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population'
+            print ('Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population')
             loop_select = raw_input('Provide Selection: ')
             arcpy.SelectLayerByAttribute_management(output_feat, "SUBSET_SELECTION", loop_select)
             add_more = raw_input('Do you want to choose another file as well? Yes or No: ')
     elif add_more == 'No':
-        print 'Okay. All done then!'
+        print ('Okay. All done then!')
     else:
-        print 'INVALID INPUT'
+        print ('INVALID INPUT')
+
+def year_2012(): #User selects year 2008
+
+    print ('Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population')
+    x = raw_input('Provide Selection: ')
+
+
+
+    if x == 'Sex':
+        print ('Would you like to find counties with majority Male or majority Female? :')
+        sex = raw_input('Male or Female: ')
+        if sex == 'Male':
+            in_layer_or_view = 'HD02_S026' #Total Percent Male > Total Percent Female
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S026" > "HD02_S051"')
+        elif sex == 'Female':
+            in_layer_or_view = 'HD02_S051' #Total Percent Female > Total Percent Male
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S051" > "HD02_S026"')
+        else:
+            print('INVALID INPUT')
+
+    elif x == 'Median Age':
+        in_layer_or_view = 'HD01_S020' #Total Median Age
+
+    elif x == 'Ethnicity':
+        print ('What ethnicity would you like to use?: White, African American, American Indian, Asian, Hawaiian, Other')
+        ethnicity = raw_input('Provide Selection: ')
+
+        if ethnicity == 'White':
+            print ('Okay, counties with majority white population')
+            in_layer_or_view = 'HD02_S078' #Percent White Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S078" > 50')
+
+        if ethnicity == 'African American':
+            print ('Okay, counties with majority African American population')
+            in_layer_or_view = 'HD02_S079' #Percent African American Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S079" > 50')
+
+        if ethnicity == 'American Indian':
+            print ('Okay, counties with majority American Indian population')
+            in_layer_or_view = 'HD02_S080' #Percent American Indian Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S080" > 50')
+
+        if ethnicity == 'Asian':
+            print ('Okay, counties with majority Asian population')
+            in_layer_or_view = 'HD02_S081' #Percent Asian Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S081" > 50')
+
+        if ethnicity == 'Hawaiian':
+            print ('Okay, counties with majority Hawaiian population')
+            in_layer_or_view = 'HD02_S089'  # Percent Hawaiian Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S089" > 50')
+
+        if ethnicity == 'Other':
+            print ('Okay, counties with majority \'other\' population')
+            in_layer_or_view = 'HD02_S094' #Percent 'Other' Population > 50%
+            attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"HD02_S094" > 50')
+
+        else:
+            print('INVALID INPUT')
+
+
+    elif x == 'Political Affiliation':
+        print ('What political affiliation would you like to select?: Republican or Democrat')
+        political_aff = raw_input('Provide Selection: ')
+
+        if political_aff == 'Republican':
+        in_layer_or_view = '' #Percent Population is Republican > Percent Population Democrat
+        attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"" > 50)
+
+        elif political_aff == 'Democrat':
+        in_layer_or_view = '' #Percent Population is Democrat > Percent Population Republican
+        attribute = arcpy.SelectLayerByAttribute_management(in_layer_or_view, 'SUBSET_SELECTION', '"" > 50)
+
+        else:
+            print ('INVALID INPUT')
+
+    elif x == 'Voter Turnout':
+        in_layer_or_view = '' #Total Amount of Voters per County
+
+    elif x == 'Total Population':
+        in_layer_or_view = 'HD01_S001' #Total Population Over 18 per County
+
+    else:
+        print ('INVALID INPUT')
+
+
+    output_feat = SelectLayerByAttribute_management(attribute, 'NEW_SELECTION')
+    print ('Would you like to choose another attribute to narrow your results?: Yes or No')
+    add_more = raw_input('Provide Selection: ')
+
+    if add_more == 'Yes':
+        while add_more == 'Yes':  # Allows the user to add more than one attribute
+            print ('Which attribute would you like to use?: Sex, Median Age, Ethnicity, Political Affiliation, Voter Turnout, Total Population')
+            loop_select = raw_input('Provide Selection: ')
+            arcpy.SelectLayerByAttribute_management(output_feat, "SUBSET_SELECTION", loop_select)
+            add_more = raw_input('Do you want to choose another file as well? Yes or No: ')
+    elif add_more == 'No':
+        print ('Okay. All done then!')
+    else:
+        print ('INVALID INPUT')
+
 
 
 def join()
