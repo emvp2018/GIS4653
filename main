@@ -10,13 +10,13 @@ env.overwriteOutput = True
 
 #Process the data
 
-module.join()
+program_module.join_tracts_census()
 
 
-module.dissolve_tracts()
+program_module.dissolve_tracts()
 
 
-module.county_join()
+program_module.county_join()
 
 
 #User input: Election year
