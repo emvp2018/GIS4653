@@ -133,8 +133,9 @@ def year_2008(): #User selects year 2008
         print 'INVALID INPUT'
 
 
-        
-        
+def join()
+'''joins tracts to census data'''
+arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID10", "2010_census_data.csv", "GEOID")           
 
 def dissolve_tracts():
   '''Dissolve census tracts into counties'''
@@ -147,12 +148,8 @@ def dissolve_tracts():
   ["HD01_S114", SUM], ["HD02_S114", MEAN]])
   
   #DO NOT DELETE THE HEADINGS OR THIS IS ALL FOR NAUGHT.
-  
-def join()
-'''joins tracts to census data'''
-census_join = arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID10", "2010_census_data.csv", "GEO.id2", KEEP_COMMON)
 
 def county_join()
 '''joins tracts to counties'''
-county_join = arc.pyAddJoin_management ("tl_2010_06_tracct10.shp", "NAME10", "counties_dissolved.shp", "F2", KEEP_ALL) 
+arc.pyAddJoin_management ("tl_2010_06_tracct10.shp", "NAME10", "counties_dissolved.shp", "F2") 
 
