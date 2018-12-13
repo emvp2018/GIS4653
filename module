@@ -139,7 +139,7 @@ arcpy.AddJoin_management ("tl_2010_06_tract10.shp", "GEOID10", "2010_census_data
 
 def dissolve_tracts():
   '''Dissolve census tracts into counties'''
-  arcpy.Dissolve_management("tl_2010_06_tract10.shp", "C:/Data/counties_dissolved.shp", countyID, 
+  arcpy.Dissolve_management("tl_2010_06_tract10.shp", "C:/Data/counties_dissolved.shp", COUNTYFP10, 
   [["HD01_S001", SUM], ["HD01_S020", MEDIAN], ["HD01_S022", SUM], ["HD02_S022", MEAN], ["HD01_S026", SUM], ["HD02_S026", MEAN], 
   ["HD01_S045", MEDIAN], ["HD01_S047", SUM], ["HD02_S047", MEAN], ["HD01_S051", SUM], ["HD02_S051", MEAN], ["HD01_S070", MEDIAN], 
   ["HD01_S072", SUM], ["HD02_S072", MEAN], ["HD01_S071", SUM], ["HD02_S071", MEAN], ["HD01_S078", SUM], ["HD02_S078", MEAN], 
